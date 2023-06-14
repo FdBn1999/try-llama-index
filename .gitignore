@@ -188,4 +188,8 @@ pip-selfcheck.json
 ### dotenv ###
 .env
 
+### custom folders ###
+documents
+storage
+
 # End of https://www.toptal.com/developers/gitignore/api/python,venv
