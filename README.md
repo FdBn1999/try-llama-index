@@ -3,7 +3,7 @@
 [LlamaIndex🦙](https://gpt-index.readthedocs.io/en/latest/)<br>
 [FastApi](https://fastapi.tiangolo.com/)
 
-I use FastApi and LlamaIndex libraries to create a simple api for querying own private documents.
+I use FastApi and LlamaIndex libraries to create a simple api for querying own private documents. <br>
 This is a proof of concept for the LlamaIndex Framework. The idea is to improve this development through research on LLMs, GPT models, indexes, and other related aspects.
 
 **How to use?**
