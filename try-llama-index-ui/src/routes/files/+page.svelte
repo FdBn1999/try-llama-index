@@ -21,7 +21,7 @@
 	let snackbarMessage: string;
 	let snackbarSuccess = true;
 
-	let filesToUpload: any[] = [];
+	let filesToUpload: FileList | null = null;
 
 	let uploadingFile = false;
 
@@ -60,10 +60,14 @@
 	}
 
 	async function uploadFile() {
-		uploadingFile = true;
-		const fileToSend = filesToUpload[0];
-		const formData = new FormData();
+		const fileToSend = filesToUpload?.item(0);
 
+		if (!fileToSend) {
+			return;
+		}
+
+		uploadingFile = true;
+		const formData = new FormData();
 		formData.append('file', fileToSend);
 
 		const res = await fetch('http://127.0.0.1:8000/uploadfile', {
@@ -74,7 +78,7 @@
 		await showSnackbarByResponse(res);
 		getFiles();
 
-		filesToUpload = [];
+		filesToUpload = null;
 		uploadingFile = false;
 	}
 
